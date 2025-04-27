@@ -73,7 +73,7 @@ jobs:
         with:
           name: ios-ipa
           path: artifacts/ios
-          continue-on-error: true
+        continue-on-error: true
 
       - name: Generate version
         id: version
