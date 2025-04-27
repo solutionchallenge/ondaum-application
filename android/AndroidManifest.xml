@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 
-     이 파일은 Flutter Android v2 embedding 마이그레이션 중 GitHub Actions 빌드를 위한 것입니다.
-     실제 매니페스트는 android/app/src/main/AndroidManifest.xml 파일입니다.
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.revimal.ondaum">
-</manifest>
