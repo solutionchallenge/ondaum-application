@@ -44,15 +44,18 @@ jobs:
       
       - name: Install dependencies
         run: flutter pub get
-      
+
       - name: Build iOS
-        run: flutter build ios --release --no-codesign
-      
-      - name: Upload iOS Artifact
-        uses: actions/upload-artifact@v4
+        run: |
+          flutter build ipa --release --no-codesign
+          cd build/ios/iphoneos
+          zip -r Runner.ipa Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v3
         with:
-          name: ios-ipa
-          path: build/ios/ipa/*.ipa
+          name: Runner.ipa
+          path: build/ios/iphoneos/Runner.ipa 
 
   create-release:
     needs: [build-android, build-ios]
