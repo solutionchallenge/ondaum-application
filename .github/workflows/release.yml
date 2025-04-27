@@ -19,8 +19,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
       
+      - name: Flutter Doctor
+        run: flutter doctor -v
+        
       - name: Build Android
-        run: flutter build apk --release
+        run: flutter build apk --release --verbose
       
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
@@ -82,4 +85,4 @@ jobs:
             artifacts/ios/*.ipa
           generate_release_notes: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
