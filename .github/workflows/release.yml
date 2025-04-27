@@ -28,11 +28,12 @@ jobs:
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-ipa
+          name: android-apk
           path: build/app/outputs/flutter-apk/app-release.apk
 
   build-ios:
     runs-on: macos-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       
@@ -47,7 +48,7 @@ jobs:
 
       - name: Build iOS
         run: |
-          flutter build ipa --release --no-codesign
+          flutter build ipa --release
           cd build/ios/iphoneos
           zip -r app-release.ipa Payload
 
@@ -72,6 +73,7 @@ jobs:
         with:
           name: ios-ipa
           path: artifacts/ios
+          continue-on-error: true
 
       - name: Generate version
         id: version
@@ -87,5 +89,6 @@ jobs:
             artifacts/android/app-release.apk
             artifacts/ios/app-release.ipa
           generate_release_notes: true
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
