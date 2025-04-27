@@ -28,7 +28,7 @@ jobs:
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: android-apk
+          name: ios-ipa
           path: build/app/outputs/flutter-apk/app-release.apk
 
   build-ios:
@@ -49,13 +49,13 @@ jobs:
         run: |
           flutter build ipa --release --no-codesign
           cd build/ios/iphoneos
-          zip -r Runner.ipa Payload
+          zip -r app-release.ipa Payload
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: Runner.ipa
-          path: build/ios/iphoneos/Runner.ipa 
+          name: ios-ipa
+          path: build/ios/iphoneos/app-release.ipa 
 
   create-release:
     needs: [build-android, build-ios]
@@ -85,7 +85,7 @@ jobs:
           name: Release ${{ steps.version.outputs.version }}
           files: |
             artifacts/android/app-release.apk
-            artifacts/ios/*.ipa
+            artifacts/ios/app-release.ipa
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
