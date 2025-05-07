@@ -50,8 +50,9 @@ class _WebViewPageState extends State<WebViewPage> {
             });
           },
           onNavigationRequest: (NavigationRequest request) {
-            // Only allow navigation to ondaum.revimal.me
-            if (!request.url.startsWith('https://ondaum.revimal.me')) {
+            // Allow navigation to ondaum.revimal.me and Google OAuth
+            if (!request.url.startsWith('https://ondaum.revimal.me') &&
+                !request.url.startsWith('https://accounts.google.com')) {
               return NavigationDecision.prevent;
             }
             return NavigationDecision.navigate;
