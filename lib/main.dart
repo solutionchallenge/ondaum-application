@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,12 +33,23 @@ class _WebViewPageState extends State<WebViewPage> {
   late final WebViewController controller;
   bool isLoading = true;
 
+  Future<String> _getUserAgent() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final androidInfo = await deviceInfo.androidInfo;
+    return 'Mozilla/5.0 (Linux; Android ${androidInfo.version.release}; ${androidInfo.model}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.64 Mobile Safari/537.36';
+  }
+
   @override
   void initState() {
     super.initState();
+    _initializeWebView();
+  }
+
+  Future<void> _initializeWebView() async {
+    final userAgent = await _getUserAgent();
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setUserAgent('Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.64 Mobile Safari/537.36')
+      ..setUserAgent(userAgent)
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (String url) {
