@@ -63,9 +63,10 @@ class _WebViewPageState extends State<WebViewPage> {
             });
           },
           onNavigationRequest: (NavigationRequest request) {
-            // Allow navigation to ondaum.revimal.me and Google OAuth
+            // Allow navigation to ondaum.revimal.me, Google OAuth (wildcard) & Youtube OAuth (wildcard)
             if (!request.url.startsWith('https://ondaum.revimal.me') &&
-                !request.url.startsWith('https://accounts.google.com')) {
+                !request.url.startsWith('https://accounts.google.co') && 
+                !request.url.startsWith('https://accounts.youtube.co')) {
               return NavigationDecision.prevent;
             }
             return NavigationDecision.navigate;
