@@ -58,37 +58,12 @@ graph TD
   
 ## 📁 DIRECTORY
 ```
-src/
-├── api/           # server API list
-│   ├── auth
-│   ├── chat
-│   ├── onboarding
-│   ├── report
-│   └── test
-├── assets/        # static assets
-│   ├── images
-│   └── lotties    
-├── commons/       # common components (like metaial UI)
-│   ├── data-display
-│   ├── feedback
-│   ├── inputs
-│   ├── mui-x/DatePickers
-│   ├── navigation
-│   └── surfaces
-├── hooks/         # custom hooks
-├── services/      # service components
-│   ├── auth
-│   ├── error
-│   ├── home
-│   ├── onboarding
-│   ├── report
-│   └── setting
-├── styles/        # reset css
-├── store/         # zustand store
-│   ├── auth
-│   ├── chat
-│   ├── keyboard
-│   └── onboarding
+app/
+├── android/           
+│   ├── app
+├── ios/       
+│   ├── Flutter
+│   └── Runner    
 ```
 
 ## 🚀 INSTALLATION
