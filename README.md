@@ -79,7 +79,6 @@ flutter --version
 2-1. Run Android
 ```bash
 flutter run
-flutter run -d emulator-5554
 ```
 
 2-2. Run iOS
@@ -87,9 +86,8 @@ flutter run -d emulator-5554
 flutter pub get
 cd ios
 pod install
-
-//xcode 열기
-ios/Runner.xcworkspace
+cd ..
+flutter run
 ```
 
 ## 🖥️ SCREENS
