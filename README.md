@@ -15,12 +15,6 @@ Ondaum provides accessible, mental health support anytime, anywhere, reducing fi
 
 Let's start https://ondaum.revimal.me/
 
-#### .APK
-https://drive.google.com/file/d/1hfUUa8xL_KVhYdOc8I2o2o2bJ3Hq6W9J/view?usp=drive_link
-
-#### .IPA (we don't have apple developer account)
-https://drive.google.com/file/d/1k_bUF3nCy_BB4YvmuT8Vk7bpGrps31hQ/view?usp=drive_link
-
 
 #### 📱 FEATURES
 - AI Counseling With Um
