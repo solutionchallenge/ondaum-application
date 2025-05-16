@@ -48,7 +48,7 @@ class _WebViewPageState extends State<WebViewPage> {
       return 'Mozilla/5.0 (Linux; Android ${androidInfo.version.release ?? 'unknown'}; ${androidInfo.model ?? 'unknown'}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.64 Mobile Safari/537.36';
     } else if (Platform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
-      return 'Mozilla/5.0 (iPhone; CPU iPhone OS ${iosInfo.systemVersion ?? 'unknown'} like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/${iosInfo.utsname.version ?? 'unknown'}';
+      return 'Mozilla/5.0 (iPhone; CPU iPhone OS ${iosInfo.systemVersion ?? '16_0'} like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) CriOS/112.0.0.0 Mobile/15E148 Safari/537.36';
     } else {
       return 'Mozilla/5.0';
     }
