@@ -30,8 +30,8 @@ https://drive.google.com/file/d/1k_bUF3nCy_BB4YvmuT8Vk7bpGrps31hQ/view?usp=drive
   - Deliver tailored insights and links to support upon risk detection
 - AI Analysis of Conversation Content
   - Summary and organization of the conversation
-  - extracting key emotions and keywords
-  - visualize the recommends using charts
+  - Extracting key emotions and keywords
+  - Visualize the recommends using charts
 
 #### ✨ VALUES
 - Available for consultation anytime, anywhere
@@ -44,7 +44,7 @@ https://drive.google.com/file/d/1k_bUF3nCy_BB4YvmuT8Vk7bpGrps31hQ/view?usp=drive
 - **Mobile**: Flutter, Dart
 - **AI**: Gemini-2.5-Pro
 - **Auth**: Google Oauth, jwt
-- **Bundler**: Vite, 
+- **Bundler**: Vite 
 - **Package Manager**: NPM
 - **Logging System**: Google Analytics
 
